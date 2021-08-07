@@ -2,6 +2,7 @@ import { Client, Intents, ApplicationCommandData, Collection } from 'discord.js'
 import { sync } from 'glob'
 
 import type Command from './types/Command'
+import type { Event } from './types/Event'
 
 type ExtendSelf<T, U> = T extends T ? U : never;
 type Without<T, U> = { [K in Exclude<keyof T, keyof U>]?: never}
@@ -43,7 +44,8 @@ export default class extends Client {
 
     loadEvents(): void {
         sync('dist/events/**/*.js', { absolute: true }).forEach(i => {
-            import(i).then(({ default: event }) => {
+            import(i).then(({ default: event }: { default: Event }) => {
+                // @ts-expect-error 
                 this.on(event.name, event.exec.bind(null, this))
                 }
             )
