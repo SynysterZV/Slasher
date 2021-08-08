@@ -5,7 +5,7 @@ const event: Event = {
     event: 'ready',
     async exec(client): Promise<void> {
         console.log(`Ready! Logged in as ${client.user!.tag}`)
-        client.registerCommands({ commands: client.commands.map(x=>x), gid: '862858334939512862' })
+        client.registerCommands({ gid: ['862858334939512862', '806550877439131660'] })
     }
 }
 
