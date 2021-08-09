@@ -36,17 +36,7 @@ export default class extends Client {
 
         const cmds: ApplicationCommandData[] = this.commands.map(x=>x)
 
-        if(gid) {
-            if(Array.isArray(gid)) {
-                gid.forEach(i => {
-                    this.guilds.cache.get(i)?.commands.set(cmds)
-                })
-            } else {
-                this.guilds.cache.get(gid)?.commands.set(cmds)
-            }
-        } else {
-            this.application.commands.set(cmds)
-        }
+        gid ? [gid].flat().forEach(i=>this.guilds.cache.get(i)?.commands.set(cmds)) : this.application.commands.set(cmds)
     }
 
     init() {
