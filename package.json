@@ -4,17 +4,14 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "start": "tsc && node ."
+    "start": "rimraf ./dist && tsc && node ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/rest": "^0.1.0-canary.0",
-    "@types/node-fetch": "^2.5.12",
-    "@types/turndown": "^5.0.1",
-    "discord-api-types": "^0.22.0",
-    "discord.js": "^13.0.1",
+    "@slasher/client": "github:discord-slasher/client",
+    "discord.js": "^13.1.0",
     "discord.js-docs": "^0.1.2",
     "dotenv": "^10.0.0",
     "glob": "^7.1.7",
@@ -23,6 +20,9 @@
     "turndown": "^7.1.1"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.4"
+    "@types/glob": "^7.1.4",
+    "@types/node-fetch": "^2.5.12",
+    "@types/turndown": "^5.0.1",
+    "rimraf": "^3.0.2"
   }
 }

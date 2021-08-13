@@ -2,7 +2,8 @@ import { MessageEmbed, ApplicationCommandOption } from 'discord.js'
 import fetch from 'node-fetch'
 import { fetchDocResult, nodeSearch, npmSearch } from './util'
 
-import type { Command, MDNDocument } from '../../types/'
+import type { SlashCommand } from '@slasher/client'
+import type { MDNDocument } from '../../types/'
 
 const query: ApplicationCommandOption = 
 {
@@ -12,7 +13,7 @@ const query: ApplicationCommandOption =
         required: true
 }
 
-const command: Command = {
+const command: SlashCommand = {
     name: 'search',
     description: 'Search',
     options: [

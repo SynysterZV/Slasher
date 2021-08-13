@@ -1,6 +1,6 @@
-import type { Command } from '../../types'
+import type { SlashCommand } from '@slasher/client'
 
-const command: Command = {
+const command: SlashCommand = {
     name: 'invite',
     description: 'Invite the bot to your guild',
     options: [

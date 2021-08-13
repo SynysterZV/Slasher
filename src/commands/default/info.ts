@@ -1,17 +1,16 @@
 import { GuildMember, MessageEmbed, ApplicationCommandOption } from 'discord.js'
 import ms from 'pretty-ms'
 
-import type { Command } from '../../types'
+import type { SlashCommand } from '@slasher/client'
 
-const options: ApplicationCommandOption[] = [
-    {
-        name: 'ephemeral',
-        description: 'Silent Send',
-        type: 'BOOLEAN'
-    }
-]
+const options: ApplicationCommandOption =
+{
+    name: 'ephemeral',
+    description: 'Silent Send',
+    type: 'BOOLEAN'
+}
 
-const command: Command = {
+const command: SlashCommand = {
     name: 'info',
     description: 'Bot Info',
     options: [
@@ -19,13 +18,13 @@ const command: Command = {
             name: 'user',
             description: 'User info',
             type: 'SUB_COMMAND',
-            options
+            options: [options]
         },
         {
             name: 'bot',
             description: 'Bot info',
             type: 'SUB_COMMAND',
-            options
+            options: [options]
         },
     ],
     async exec(interaction) {

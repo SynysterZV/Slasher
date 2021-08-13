@@ -1,6 +1,3 @@
-import { config } from 'dotenv'
-import Client from './client'
+import Client from '@slasher/client'
 
-config()
-
-new Client().init()
+new Client({ root: 'dist/', gid: ['806550877439131660', '862858334939512862'] }).init()
