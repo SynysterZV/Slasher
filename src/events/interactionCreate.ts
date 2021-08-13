@@ -1,5 +1,4 @@
-import { Event } from '../types/Event'
-import Command from '../types/Command'
+import { Command, Event } from '../types'
 
 const event: Event = {
     name: 'interactionCreate',

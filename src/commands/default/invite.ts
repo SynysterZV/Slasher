@@ -1,4 +1,4 @@
-import type Command from '../../types/Command'
+import type { Command } from '../../types'
 
 const command: Command = {
     name: 'invite',

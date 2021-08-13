@@ -1,8 +1,7 @@
 import { Client, Intents, ApplicationCommandData, Collection } from 'discord.js'
 import { sync } from 'glob'
 
-import type Command from './types/Command'
-import type { Event } from './types/Event'
+import type { Command, Event } from './types'
 
 
 export default class extends Client {
@@ -17,6 +16,7 @@ export default class extends Client {
     loadCommands(): void {
         sync('dist/commands/**/*.js', { absolute: true }).forEach(i => {
             import(i).then(({ default: command }: { default: Command }) => {
+                if(!command) return
                 this.commands.set(command.name, command)
             })
         })

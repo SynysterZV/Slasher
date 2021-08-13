@@ -1,5 +1,5 @@
 {
-  "name": "Slasher",
+  "name": "slasher",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -11,10 +11,16 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/rest": "^0.1.0-canary.0",
+    "@types/node-fetch": "^2.5.12",
+    "@types/turndown": "^5.0.1",
     "discord-api-types": "^0.22.0",
     "discord.js": "^13.0.1",
+    "discord.js-docs": "^0.1.2",
     "dotenv": "^10.0.0",
-    "glob": "^7.1.7"
+    "glob": "^7.1.7",
+    "node-fetch": "^2.6.1",
+    "pretty-ms": "^7.0.1",
+    "turndown": "^7.1.1"
   },
   "devDependencies": {
     "@types/glob": "^7.1.4"
